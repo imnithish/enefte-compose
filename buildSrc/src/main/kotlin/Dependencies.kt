@@ -1,6 +1,7 @@
 object Dependencies {
     val kotlin by lazy { "androidx.core:core-ktx:${Versions.kotlin}" }
     val compose by lazy { "androidx.core:core-ktx:${Versions.compose}" }
+    val composeFoundation by lazy { "androidx.compose.foundation:foundation:1.2.0-alpha06" }
     val material by lazy { "androidx.compose.material:material:${Versions.compose}" }
     val composePreview by lazy { "androidx.compose.ui:ui-tooling-preview:${Versions.compose}" }
     val androidXLifecycle by lazy { "androidx.lifecycle:lifecycle-runtime-ktx:${Versions.androidx_lifecycle}" }
@@ -20,5 +21,8 @@ object Dependencies {
 
     object Accompanist {
         val navigationAnimation by lazy { "com.google.accompanist:accompanist-navigation-animation:${Versions.accompanist}" }
+        val pager by lazy { "com.google.accompanist:accompanist-pager:${Versions.accompanist}" }
+        val pagerIndicator by lazy { "com.google.accompanist:accompanist-pager-indicators:${Versions.accompanist}" }
+        val systemUIController by lazy { "com.google.accompanist:accompanist-systemuicontroller:${Versions.accompanist}" }
     }
 }
