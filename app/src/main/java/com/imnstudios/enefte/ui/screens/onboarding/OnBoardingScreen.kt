@@ -39,21 +39,6 @@ fun OnBoardingScreen(
     val scope = rememberCoroutineScope()
     val scope2 = rememberCoroutineScope()
 
-    LaunchedEffect(pagerState) {
-        snapshotFlow { pagerState.currentPage }.collect { page ->
-            scope2.launch {
-                pagerState2.animateScrollToPage(page = page)
-            }
-        }
-    }
-
-    LaunchedEffect(key1 = pagerState2, block = {
-        snapshotFlow { pagerState2.currentPage }.collect { page ->
-            scope.launch {
-                pagerState.animateScrollToPage(page = page)
-            }
-        }
-    })
 
     Box(
         modifier = Modifier
@@ -66,6 +51,7 @@ fun OnBoardingScreen(
             modifier = Modifier
                 .fillMaxWidth()
                 .fillMaxHeight(fraction = 0.55f)
+                .disabledHorizontalPointerInputScroll()
                 .statusBarsPadding()
                 .align(Alignment.TopCenter),
             count = OnBoardingDataItems.size
@@ -91,6 +77,7 @@ fun OnBoardingScreen(
                     state = pagerState,
                     modifier = Modifier
                         .fillMaxWidth()
+                        .disabledHorizontalPointerInputScroll()
                         .padding(top = 42.dp)
                         .sizeIn(maxHeight = 82.dp),
                     count = OnBoardingDataItems.size
