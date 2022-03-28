@@ -10,7 +10,9 @@ import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.rememberCoroutineScope
+import androidx.compose.runtime.snapshotFlow
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
@@ -37,6 +39,22 @@ fun OnBoardingScreen(
     val scope = rememberCoroutineScope()
     val scope2 = rememberCoroutineScope()
 
+    LaunchedEffect(pagerState) {
+        snapshotFlow { pagerState.currentPage }.collect { page ->
+            scope2.launch {
+                pagerState2.animateScrollToPage(page = page)
+            }
+        }
+    }
+
+    LaunchedEffect(key1 = pagerState2, block = {
+        snapshotFlow { pagerState2.currentPage }.collect { page ->
+            scope.launch {
+                pagerState.animateScrollToPage(page = page)
+            }
+        }
+    })
+
     Box(
         modifier = Modifier
             .fillMaxSize()
@@ -49,7 +67,6 @@ fun OnBoardingScreen(
                 .fillMaxWidth()
                 .fillMaxHeight(fraction = 0.55f)
                 .statusBarsPadding()
-                .disabledHorizontalPointerInputScroll()
                 .align(Alignment.TopCenter),
             count = OnBoardingDataItems.size
         ) { page ->
@@ -70,14 +87,12 @@ fun OnBoardingScreen(
             shape = RoundedCornerShape(topEnd = 32.dp, topStart = 32.dp)
         ) {
             Column(horizontalAlignment = Alignment.CenterHorizontally) {
-
                 HorizontalPager(
                     state = pagerState,
                     modifier = Modifier
                         .fillMaxWidth()
                         .padding(top = 42.dp)
-                        .sizeIn(maxHeight = 82.dp)
-                        .disabledHorizontalPointerInputScroll(),
+                        .sizeIn(maxHeight = 82.dp),
                     count = OnBoardingDataItems.size
                 ) { page ->
                     Text(
