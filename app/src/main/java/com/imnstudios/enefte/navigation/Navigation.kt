@@ -13,6 +13,7 @@ import com.google.accompanist.navigation.animation.AnimatedNavHost
 import com.google.accompanist.navigation.animation.composable
 import com.google.accompanist.navigation.animation.rememberAnimatedNavController
 import com.imnstudios.enefte.ui.screens.onboarding.OnBoardingScreen
+import com.imnstudios.enefte.ui.screens.start.StartScreen
 
 @OptIn(ExperimentalAnimationApi::class)
 @Composable
@@ -21,7 +22,7 @@ fun Navigation() {
     AnimatedNavHost(
         modifier = Modifier.fillMaxSize(),
         navController = navController,
-        startDestination = "on_boarding",
+        startDestination = "start",
     ) {
         composable(
             route = "on_boarding"
@@ -34,12 +35,7 @@ fun Navigation() {
         composable(
             route = "start"
         ) {
-           Box(
-               Modifier
-                   .fillMaxSize()
-                   .background(Color.Red)) {
-
-           }
+            StartScreen()
         }
     }
 
