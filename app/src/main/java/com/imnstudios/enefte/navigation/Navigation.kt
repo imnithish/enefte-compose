@@ -12,6 +12,7 @@ import androidx.compose.ui.graphics.Color
 import com.google.accompanist.navigation.animation.AnimatedNavHost
 import com.google.accompanist.navigation.animation.composable
 import com.google.accompanist.navigation.animation.rememberAnimatedNavController
+import com.imnstudios.enefte.ui.screens.conntect.ConnectScreen
 import com.imnstudios.enefte.ui.screens.onboarding.OnBoardingScreen
 import com.imnstudios.enefte.ui.screens.start.StartScreen
 
@@ -22,7 +23,7 @@ fun Navigation() {
     AnimatedNavHost(
         modifier = Modifier.fillMaxSize(),
         navController = navController,
-        startDestination = "on_boarding",
+        startDestination = "connect",
     ) {
         composable(
             route = "on_boarding"
@@ -36,6 +37,12 @@ fun Navigation() {
             route = "start"
         ) {
             StartScreen()
+        }
+
+        composable(
+            route = "connect"
+        ) {
+            ConnectScreen(navController = navController)
         }
     }
 
