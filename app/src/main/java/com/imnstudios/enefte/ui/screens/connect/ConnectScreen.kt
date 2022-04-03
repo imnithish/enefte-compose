@@ -1,6 +1,6 @@
 @file:Suppress("EXPERIMENTAL_IS_NOT_ENABLED")
 
-package com.imnstudios.enefte.ui.screens.conntect
+package com.imnstudios.enefte.ui.screens.connect
 
 import androidx.activity.compose.BackHandler
 import androidx.compose.foundation.Image
@@ -9,6 +9,7 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.*
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.rememberCoroutineScope
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
@@ -46,7 +47,6 @@ fun ConnectScreen(
             }
         }
     ) {
-
         Scaffold(
             topBar = {
                 com.imnstudios.enefte.ui.components.AppBar(
@@ -62,6 +62,15 @@ fun ConnectScreen(
                     })
             }
         ) {
+
+            Box(
+                modifier = Modifier
+                    .padding(it)
+                    .fillMaxSize(),
+                contentAlignment = Alignment.Center
+            ) {
+                TextFieldModal(modifier = Modifier.fillMaxWidth())
+            }
 
         }
     }
