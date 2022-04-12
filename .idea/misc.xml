@@ -3,8 +3,10 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/imnit/AndroidStudioProjects/enefte/app/src/main/res/drawable/ic_address.xml" value="0.152" />
         <entry key="..\:/Users/imnit/AndroidStudioProjects/enefte/app/src/main/res/drawable/ic_arrow_right.xml" value="0.1215" />
         <entry key="..\:/Users/imnit/AndroidStudioProjects/enefte/app/src/main/res/drawable/ic_logo.xml" value="0.1" />
+        <entry key="..\:/Users/imnit/AndroidStudioProjects/enefte/app/src/main/res/layout/sample.xml" value="0.25" />
       </map>
     </option>
   </component>

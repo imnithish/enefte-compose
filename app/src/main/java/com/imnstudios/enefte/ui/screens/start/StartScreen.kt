@@ -25,7 +25,7 @@ import com.imnstudios.enefte.ui.theme.primary
 import kotlinx.coroutines.launch
 
 @Composable
-fun StartScreen() {
+fun StartScreen(onClick: () -> Unit) {
     Box(
         modifier = Modifier
             .fillMaxSize()
@@ -117,9 +117,10 @@ fun StartScreen() {
                     verticalAlignment = Alignment.CenterVertically
                 ) {
 
-                    Button(modifier = Modifier.weight(2f),
-                        onClick = {
-                        }) {
+                    Button(
+                        modifier = Modifier.weight(2f),
+                        onClick = onClick
+                    ) {
                         Text(
                             text = "Connect with Wallet",
                             style = MaterialTheme.typography.button
@@ -133,7 +134,8 @@ fun StartScreen() {
                             .weight(1f),
                         border = BorderStroke(1.dp, MaterialTheme.colors.onBackground),
                         colors = ButtonDefaults.outlinedButtonColors(backgroundColor = MaterialTheme.colors.background),
-                        onClick = { }) {
+                        onClick = onClick
+                    ) {
                         Image(
                             painter = painterResource(id = R.drawable.ic_arrow_right),
                             contentDescription = ""

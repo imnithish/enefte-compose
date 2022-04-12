@@ -41,7 +41,8 @@ fun OnBoardingScreen(
     Box(
         modifier = Modifier
             .fillMaxSize()
-            .background(MaterialTheme.colors.background),
+            .background(MaterialTheme.colors.background)
+            .navigationBarsPadding(),
     ) {
 
         HorizontalPager(

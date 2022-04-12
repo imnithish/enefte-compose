@@ -10,7 +10,9 @@ import com.google.accompanist.navigation.animation.AnimatedNavHost
 import com.google.accompanist.navigation.animation.composable
 import com.google.accompanist.navigation.animation.rememberAnimatedNavController
 import com.imnstudios.enefte.ui.screens.connect.ConnectScreen
+import com.imnstudios.enefte.ui.screens.home.HomeScreen
 import com.imnstudios.enefte.ui.screens.onboarding.OnBoardingScreen
+import com.imnstudios.enefte.ui.screens.setupprofile.SetupProfile
 import com.imnstudios.enefte.ui.screens.start.StartScreen
 
 @OptIn(ExperimentalAnimationApi::class)
@@ -20,7 +22,7 @@ fun Navigation() {
     AnimatedNavHost(
         modifier = Modifier.fillMaxSize(),
         navController = navController,
-        startDestination = "connect",
+        startDestination = "on_boarding",
     ) {
         composable(
             route = "on_boarding"
@@ -31,15 +33,32 @@ fun Navigation() {
         }
 
         composable(
-            route = "start"
+            route = "start",
         ) {
-            StartScreen()
+            StartScreen() {
+                navController.navigate("connect")
+            }
         }
 
         composable(
             route = "connect"
         ) {
             ConnectScreen(navController = navController)
+        }
+
+        composable(
+            route = "setup_profile"
+        ) {
+            SetupProfile(
+                onNavIconPress = { navController.popBackStack() },
+                onSubmit = { navController.navigate("home") }
+            )
+        }
+
+        composable(
+            route = "home"
+        ) {
+            HomeScreen()
         }
     }
 

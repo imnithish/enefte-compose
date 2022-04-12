@@ -47,6 +47,6 @@ val Typography = Typography(
     overline = TextStyle(
         fontWeight = FontWeight.W300,
         fontSize = 10.sp,
-        color = white
+        color = gray_light
     ),
 )
