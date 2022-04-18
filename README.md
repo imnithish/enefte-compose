@@ -4,9 +4,11 @@
 **enefte** is a sample Android application 📱 built completely using Jetpack Compose 🚀.
 
 
-***You can try outy enefte app clicking link below 👇***
+***You can try out enefte app clicking link below 👇***
 
 [![enefte-compose App](https://img.shields.io/badge/enefte-APK-green)]()
+
+
 
 UI Credit: [Figma](https://www.figma.com/community/file/1085873369515597265)
 
