@@ -68,4 +68,5 @@ dependencies {
     androidTestImplementation(Dependencies.espressoAndroidTest)
     androidTestImplementation(Dependencies.composeJUnitAndroidTest)
     debugImplementation(Dependencies.composeTooling)
+    debugImplementation(Dependencies.Accompanist.flowRow)
 }

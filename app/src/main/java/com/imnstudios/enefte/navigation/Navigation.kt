@@ -22,7 +22,7 @@ fun Navigation() {
     AnimatedNavHost(
         modifier = Modifier.fillMaxSize(),
         navController = navController,
-        startDestination = "on_boarding",
+        startDestination = "home",
     ) {
         composable(
             route = "on_boarding"

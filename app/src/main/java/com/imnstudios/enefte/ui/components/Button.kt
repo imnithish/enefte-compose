@@ -7,11 +7,13 @@ import androidx.compose.material.ButtonDefaults
 import androidx.compose.material.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 
 @Composable
 fun Button(
     modifier: Modifier = Modifier,
+    backGroundColor: Color = MaterialTheme.colors.primary,
     onClick: () -> Unit,
     content: @Composable RowScope.() -> Unit
 ) {
@@ -26,7 +28,7 @@ fun Button(
             disabledElevation = 0.dp
         ),
         colors = ButtonDefaults.buttonColors(
-            backgroundColor = MaterialTheme.colors.primary,
+            backgroundColor = backGroundColor,
             contentColor = MaterialTheme.colors.onBackground
         ),
         content = content

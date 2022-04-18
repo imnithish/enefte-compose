@@ -24,5 +24,6 @@ object Dependencies {
         val pager by lazy { "com.google.accompanist:accompanist-pager:${Versions.accompanist}" }
         val pagerIndicator by lazy { "com.google.accompanist:accompanist-pager-indicators:${Versions.accompanist}" }
         val systemUIController by lazy { "com.google.accompanist:accompanist-systemuicontroller:${Versions.accompanist}" }
+        val flowRow by lazy { "com.google.accompanist:accompanist-flowlayout:${Versions.accompanist}" }
     }
 }
