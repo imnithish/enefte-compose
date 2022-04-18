@@ -10,6 +10,10 @@
 
 UI Credit: [Figma](https://www.figma.com/community/file/1085873369515597265)
 
+## Contact
+[![Mail](https://img.shields.io/badge/-Say%20Hi!-black?style=for-the-badge&logo=gmail)](mailto:imnithish@live.com) [![Linkedin](https://img.shields.io/badge/-LinkedIn-black?style=for-the-badge&logo=Linkedin)](https://www.linkedin.com/in/imnithish/)
+
+
 ## License
 ```
 MIT License
